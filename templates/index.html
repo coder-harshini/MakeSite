@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeSite — Build Your Website with AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a class="logo" href="/">Make<span>Site</span></a>
+        <span class="nav-label">AI WEBSITE BUILDER</span>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="badge">✦ YOUR IDEAS, BUILT WITH AI</div>
+            <h1>Imagine it.<br><span>MakeSite builds it.</span></h1>
+            <p class="subtitle">
+                Describe your dream website. Let AI turn your idea into a real webpage.
+            </p>
+
+            <div class="builder">
+                <label for="prompt">What do you want to create?</label>
+                <textarea id="prompt" placeholder="Example: Create a modern portfolio website for a graphic designer, with a dark background, project gallery, and contact section..."></textarea>
+                <div class="builder-footer">
+                    <span>✦ Be as creative as you like</span>
+                    <button id="generateBtn" type="button">Generate Website ↗</button>
+                </div>
+            </div>
+
+            <p id="status" class="status" role="status"></p>
+        </section>
+
+        <section class="preview-section">
+            <div class="preview-heading">
+                <div>
+                    <h2>Your creation</h2>
+                    <p>Your generated website will appear here.</p>
+                </div>
+                <button id="downloadBtn" type="button" disabled>↓ Download HTML</button>
+            </div>
+
+            <div class="preview-frame">
+                <div class="preview-topbar">
+                    <span></span><span></span><span></span>
+                    <div>your-website.html</div>
+                </div>
+                <iframe id="preview" title="Generated website preview" sandbox=""></iframe>
+                <div id="emptyState" class="empty-state">
+                    <div class="empty-icon">✧</div>
+                    <h3>Your next big idea starts here.</h3>
+                    <p>Enter a prompt above and click Generate Website.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>Made with ✦ by MakeSite</footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
